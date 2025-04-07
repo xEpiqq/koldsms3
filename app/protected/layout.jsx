@@ -34,6 +34,7 @@ import {
   UserIcon,
 } from "@heroicons/react/16/solid";
 import "@/app/globals.css";
+import { signOutAction } from "@/app/actions";
 
 export default async function ProtectedLayout({ children }) {
   const supabase = await createClient();
@@ -91,7 +92,7 @@ export default async function ProtectedLayout({ children }) {
                   <DropdownLabel>Share feedback</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
-                <DropdownItem href="/logout">
+                <DropdownItem onClick={signOutAction}>
                   <ArrowRightStartOnRectangleIcon />
                   <DropdownLabel>Sign out</DropdownLabel>
                 </DropdownItem>
